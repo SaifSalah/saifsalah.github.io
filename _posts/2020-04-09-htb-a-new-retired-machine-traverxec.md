@@ -6,6 +6,8 @@ categories: [HTB,Traverxec]
 tags: [Hackthebox,HTB,Windows,CTF]
 ---
 
+![Traverxec]({{ "/assets/img/Traverxec.png" | relative_url }})
+
 ## Nmap Scan
 
 ```
