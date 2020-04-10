@@ -1,16 +1,16 @@
 ---
-title: HTB Traverxec Machine | Soon
+title: TEST
 author: Cotes Chung
 date: 2020-04-09 
 categories: [HTB,Traverxec]
-tags: [Hackthebox,HTB,Windows,CTF]
+tags: [Tag1,Tag2,Tag3,Tag4]
 ---
 
-![traverxec]({{ "/assets/img/traverxec.png" | relative_url }})
 
-## Nmap Scan
+## Test
 
 ```
-#the machine will retired Soon :)
+test
+
 ````
 
