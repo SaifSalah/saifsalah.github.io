@@ -1,9 +1,9 @@
 ---
-title: Understanding Portable Executable (PE) File Structure
-author: Saif Salah
-date: 2023-08-09 
-categories: [RedTeam,Malware Dev]
-tags: [SysInternal,Windows,RedTeam,SoftwareDev]
+title: Understanding Portable Executable (PE) File Structure for Beginners
+author: Your Name
+date: 2023-09-08
+categories: [Malware Development, Windows Internal, Software Engineering]
+tags: [PE File, Windows Executables, File Structure]
 ---
 
 
