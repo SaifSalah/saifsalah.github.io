@@ -10,12 +10,12 @@
 
 title: S41F                          # the main title
 
-tagline: Software Engineer,RedTeamer WannaBe|OSCP|OSCE|OSWE|eCPTX|eWPTXv2|CRTO.  # it will display as the sub-title
+tagline: Offensive Security Engineer, Software Engineer.  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  software development,
-  web secuirty, code review , red team
-  penetration testing,malware development
+  software development,Software Engineering
+  web app sec, security code review, red team
+  penetration testing, malware development
 
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://saifsalah.github.io'
