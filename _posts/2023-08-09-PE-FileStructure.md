@@ -1,6 +1,6 @@
 ---
 title: Understanding Portable Executable (PE) File Structure for Beginners
-author: Your Name
+author: S41F
 date: 2023-09-08
 categories: [Malware Development, Windows Internal, Software Engineering]
 tags: [PE File, Windows Executables, File Structure]
