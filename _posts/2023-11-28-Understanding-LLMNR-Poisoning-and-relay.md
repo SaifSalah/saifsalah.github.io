@@ -31,6 +31,8 @@ Now that we know which road we're watching, we can start Responder like this:
 
 `responder -I eth0`
 
+![](https://saifsalah.github.io/posts/Understanding-LLMNR-Poisoning-and-relay/?raw=true)
+
 In simple terms, this command makes the Responder pay attention to certain questions and helps it figure out which devices are asking those questions.
 
 ![](https://github.com/SaifSalah/saifsalah.github.io/blob/master/assets/img/pic2.png)
