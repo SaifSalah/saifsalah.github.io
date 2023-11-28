@@ -15,7 +15,7 @@ Hey there! Today will talk about AD Recon and how we can get credential access w
 
 Okay, so there's this protocol called LLMNR. It's part of Windows, and it's like a backup plan when our computers are trying to figure out the names of other computers on the same network. Imagine it as a kind of assistant to help out when the usual way of finding computer names (something called DNS) isn't working. There's also an older assistant called NBT-NS, but we won't get too deep into that right now.
 
-Now, here's the interesting part. When LLMNR is doing its thing and someone asks for a file or something, it uses these things called NetNTLMv2 hashes to respond. It's like an NTLM Hash to make sure everything is secure. But, here's the catch, someone sneaky could take advantage of this process.
+Now, here's the interesting part. When LLMNR is doing its thing and someone asks for a file or something, it uses these things called NetNTLMv2 hashes to respond. It's like an NTLM Hash to make sure everything is secure. But, here's the catch, someone sneaky could take advantage of this process, as we discussed above adversaries may spoof an authoritative source for name resolution to force communication with an adversary controlled system. This activity may be used to collect or relay authentication materials, so let's see how we can do that
 
 
 ### Setting Up Responder 
