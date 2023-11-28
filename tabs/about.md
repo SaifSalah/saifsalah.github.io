@@ -4,10 +4,10 @@ title: About
 
 <center>
 
-My name is Saif Salah From Iraq,My nick name is <b>( S41F )</b> and currently working at <b>@ZainIraq</b> as a Sr Web & Software developer.
+My name is Saif Salah From Iraq, My nickname is <b>( S41F )</b> and currently working as a Tech Lead.
 I made this blog to share my knowledge with other people
 <br>
-<h3>certificates : OSCP , OSCE , eCPTX :)</h3>
+<h3>certificates: OSCP, OSCE, OSWE,eCPTX,eWPTXv2,Offshore lab :)</h3>
 </center>
 
 
