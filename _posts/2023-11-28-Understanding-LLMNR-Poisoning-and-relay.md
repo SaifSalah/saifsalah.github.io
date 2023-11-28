@@ -26,7 +26,7 @@ bash
 
 `if config`
 
-![](https://github.com/SaifSalah/saifsalah.github.io/blob/master/assets/img/pic1.png)
+![](https://github.com/SaifSalah/saifsalah.github.io/blob/master/assets/img/pic1.png?raw=true)
 Now that we know which road we're watching, we can start Responder like this:
 
 `responder -I eth0`
@@ -39,11 +39,14 @@ In simple terms, this command makes the Responder pay attention to certain quest
 
 Once Responder is up and running, we just sit back and wait. Imagine someone trying to open a folder but making a little mistake in the name. Before they realize it, we've caught their hash (the NetNTLMv2 hash).
 
-![](https://github.com/SaifSalah/saifsalah.github.io/blob/master/assets/img/accessShare.png)
+![](https://github.com/SaifSalah/saifsalah.github.io/blob/master/assets/img/accessShare.png?raw=true)
 
-![](https://github.com/SaifSalah/saifsalah.github.io/blob/master/assets/img/picbefore3.png)
+![](https://github.com/SaifSalah/saifsalah.github.io/blob/master/assets/img/picbefore3.png?raw=true)
 
 Well well, the person might see a message saying the folder isn't accessible, but the trick has worked. On our end, Responder has grabbed the request and saved some details like the person's name, computer address, and NTLM Hash.
+
+![](https://github.com/SaifSalah/saifsalah.github.io/blob/master/assets/img/pic3.png?raw=true)
+
 And there you have it – LLMNR poisoning and we get the NTLM hash of the user then we can use John the Ripper or hashcat to crack the password.
 
 
