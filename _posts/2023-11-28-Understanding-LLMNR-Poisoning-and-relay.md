@@ -9,7 +9,7 @@ tags: [Responder, SMB, LLMNR, T1171 Tactic, Credential Access]
 
 ## Introduction
 
-Hey there! Today will talk about AD Recon and how we can get credential access while we are trying to get initial access by (LLMNR poisoning), By responding to LLMNR/NBT-NS network traffic, adversaries may spoof an authoritative source for name resolution to force communication with an adversary controlled system. This activity may be used to collect or relay authentication materials, so let's see how we can do that
+Hey there! Today will talk about (LLMNR poisoning) and how we can get credential access after initial Access, By responding to LLMNR/NBT-NS network traffic, adversaries may spoof an authoritative source for name resolution to force communication with an adversary controlled system. This activity may be used to collect or relay authentication materials, so let's see how we can do that
 
 ## What's LLMNR Anyway?
 
