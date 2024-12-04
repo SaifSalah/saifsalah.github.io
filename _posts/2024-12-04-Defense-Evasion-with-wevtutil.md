@@ -1,22 +1,20 @@
 ---
-title: Defense Evasion with `wevtutil.exe`
+title: Defense Evasion with wevtutil.exe
 author: Sayf Salah
 date: 2024-12-04
 categories: [Red Team, Defense Evasion]
-tags: [Windows, `wevtutil.exe`, Event Logs, T1070.001, Defense Evasion, SOC]
+tags: [Windows, wevtutil.exe, Event Logs, T1070.001, Defense Evasion, SOC]
 ---
 
-## Introduction
 
+
+## Introduction
 In the world of Red Teaming, stealth is critical. A successful operation doesn't just rely on achieving objectives but also on leaving minimal traces for defenders to detect. One powerful tool in a Red Teamer's arsenal is the Windows Event Utility (`wevtutil.exe`), a native Windows tool used for managing event logs.
 
 While designed for legitimate system administration, `wevtutil.exe` is often abused in real-world attacks to clear event logs and erase evidence of malicious activity. In this article, we'll explore how adversaries use this tool for defense evasion, provide a realistic attack scenario, and highlight strategies for defenders to detect and mitigate its misuse.
 
-T1070.001 : https://attack.mitre.org/software/S0645
-
 
 ## Understanding `wevtutil.exe`
-
 `wevtutil.exe` is a command-line utility that allows users to query, export, and clear event logs. It’s an essential tool for system administrators but is also a favorite for attackers aiming to cover their tracks. 
 
 ### Key Commands:
@@ -121,4 +119,3 @@ A Red Team operation targets a Windows-based organization. The attackers’ goal
 `wevtutil.exe` is a legitimate tool for administrators and a powerful weapon for attackers. By understanding its capabilities and abuse potential, defenders can build better detection and mitigation strategies.
 
 that's it and thank you for time ^^
-
