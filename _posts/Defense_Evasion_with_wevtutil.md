@@ -1,4 +1,3 @@
-
 ---
 title: Defense Evasion with `wevtutil.exe`
 author: Sayf Salah
