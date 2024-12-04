@@ -14,7 +14,6 @@ While designed for legitimate system administration, `wevtutil.exe` is often abu
 
 T1070.001 : https://attack.mitre.org/software/S0645
 
----
 
 ## Understanding `wevtutil.exe`
 
@@ -39,7 +38,7 @@ T1070.001 : https://attack.mitre.org/software/S0645
    ```
    Queries specific event logs, such as logon events.
 
----
+
 
 ## Real-World Scenario: Using `wevtutil.exe` in an Attack
 
@@ -72,7 +71,6 @@ A Red Team operation targets a Windows-based organization. The attackers’ goal
 5. **Persistence Setup**:
    - Before exiting, the attacker establishes a stealthy backdoor for future access, such as a scheduled task or a registry modification.
 
----
 
 ## Detection and Mitigation
 
@@ -99,7 +97,6 @@ A Red Team operation targets a Windows-based organization. The attackers’ goal
 5. **Track PowerShell Activity**:
    - Monitor for PowerShell alternatives like `Clear-EventLog`, as attackers may switch to different methods if `wevtutil.exe` is detected.
 
----
 
 ## Defender's Best Practices
 
@@ -118,7 +115,6 @@ A Red Team operation targets a Windows-based organization. The attackers’ goal
    - Conduct tabletop exercises to simulate attacks using `wevtutil.exe`.
    - Train analysts to recognize the signs of log clearance and LOLBAS (Living Off the Land Binaries and Scripts) abuse.
 
----
 
 ## Conclusion
 
@@ -126,4 +122,3 @@ A Red Team operation targets a Windows-based organization. The attackers’ goal
 
 that's it and thank you for time ^^
 
----
