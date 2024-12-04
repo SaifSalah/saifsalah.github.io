@@ -1,5 +1,5 @@
 ---
-title: Defense Evasion with wevtutil.exe
+title: Defense Evasion with wevtutil
 author: Sayf Salah
 date: 2024-12-04
 categories: [Red Team, Defense Evasion]
