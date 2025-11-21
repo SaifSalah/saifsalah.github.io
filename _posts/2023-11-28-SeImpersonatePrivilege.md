@@ -10,7 +10,12 @@ tags: [SeImpersonatePrivilege, Token Impersonation, Named Pipes, Golang]
 
 A while back, someone asked me a question that actually made sense, he wanted to know HOW the SeImpersonatePrivilege exploitation really works. Like, why does having this privilege let us escalate in the first place? What's actually happening behind the scenes?
 
-After I explained it to him, I thought this would make a good article.
+After walking him through it, I realized this would make a decent writeup. 
+
+Now, i think there are more than 5 of variants out there for exploiting SeImpersonatePrivilege ( JuicyPotato, RoguePotato, PrintSpoofer, GodPotato,SigmaPotato) the list goes on. Each one uses different tricks to trigger the exploitation. We're not going to cover all of them here.
+
+Instead, this article focuses on the core technique that makes all of these work: **Named Pipe Impersonation**. Understanding this fundamental mechanism.
+
 ## What is SeImpersonatePrivilege?
 
 this privilege lets a process borrow someone else's access token if it can grab a handle to it. Like if someone hands you their ID badge,this privilege lets you actually use it.
