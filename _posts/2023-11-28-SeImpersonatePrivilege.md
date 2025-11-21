@@ -334,7 +334,7 @@ func spawnShellWithToken(hToken syscall.Token) error {
 
 CreateProcessAsUserW is the special version that lets you pick which token to use. CREATE_NEW_CONSOLE makes a new window pop up.
 
-### Full code
+### main func
 ```go
 func main() {
 	var pipeName string
@@ -369,6 +369,7 @@ func main() {
 
 	fmt.Println()
 	fmt.Println("[+] Impersonated Token SID:", sidString)
+
 	fmt.Println()
 	fmt.Println("[+] Duplicating token to Primary...")
 
@@ -394,15 +395,14 @@ func main() {
 	fmt.Println("[+] New cmd.exe window opened with impersonated privileges")
 	fmt.Println()
 }
+
 ```
 Full code here : 
 ## Testing It
 
 ![](https://github.com/SaifSalah/saifsalah.github.io/blob/master/assets/img/demo.png?raw=true)
 
-Let me show you this working,Network Service to Administrator.
-
-### Setup
+### Steps
 
 Get a Network Service shell with PSExec:
 ```cmd
@@ -480,6 +480,5 @@ New cmd window pops up. Run `whoami` and you're now whoever connected.
 8. Duplicated to primary token
 9. Spawned cmd.exe with that token
 
-Started Network Service, ended with Administrator shell. All because we had SeImpersonatePrivilege and got someone to connect.
 ---
 Hit me up if you spot mistakes or have better ways to do this. Always learning.
