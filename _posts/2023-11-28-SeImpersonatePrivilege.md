@@ -14,7 +14,9 @@ After walking him through it, I realized this would make a decent writeup.
 
 Now, i think there are more than 5 of variants out there for exploiting SeImpersonatePrivilege ( JuicyPotato, RoguePotato, PrintSpoofer, GodPotato,SigmaPotato) the list goes on. Each one uses different tricks to trigger the exploitation. We're not going to cover all of them here.
 
-Instead, this article focuses on the core technique that makes all of these work: **Named Pipe Impersonation**. Understanding this fundamental mechanism.
+Instead, this article focuses: **Named Pipe Impersonation**. Understanding this fundamental mechanism.
+
+![](https://m.media-amazon.com/images/M/MV5BNzIxZmIzYjEtZGMyZi00NDAwLWJmODktYTAwOWU2ZjkwZjdlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg)
 
 ## What is SeImpersonatePrivilege?
 
@@ -65,10 +67,11 @@ Step 2 is usually the tricky one. But let's build something that works first.
 
 ## Building This in Go
 
-I choose Go because I wanted to get better at it, and the standalone binaries are nice. Plus I get more control over the Windows API stuff.
+I choose Go because I <3 it
+
+![](https://en.meming.world/images/en/thumb/e/e2/Crying_Cat_with_paw_up.jpg/300px-Crying_Cat_with_paw_up.jpg)
 
 ### Setting Up Windows APIs
-
 First, load the Windows functions we need:
 ```go
 package main
@@ -338,6 +341,7 @@ func spawnShellWithToken(hToken syscall.Token) error {
 ```
 
 CreateProcessAsUserW is the special version that lets you pick which token to use. CREATE_NEW_CONSOLE makes a new window pop up.
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPZxGttnrXaYKDoF7pLjg8AZkMrJItfjvd8w&s)
 
 ### main func
 ```go
