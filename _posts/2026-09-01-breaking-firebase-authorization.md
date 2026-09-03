@@ -1,5 +1,5 @@
 ---
-title: From Zero to System Admin on a Firebase App - Broken Auth Logic
+title: From Zero to Admin on a Firebase App - Broken Auth Logic
 author: S41F
 date: 2026-09-01
 categories: [Web Security, Firebase]
