@@ -8,9 +8,10 @@ tags: [Firebase, Authorization, Broken Access Control, Firestore, Privilege Esca
 
 ## Intro
 
-Most Firebase writeups focus on the auth layer, open signup, email verification bypass, enumeration, stealing tokens from IndexedDB. On this engagement the interesting bug wasn't in the auth layer. It was in the authorization logic the app built on top of Firebase, specifically how it decided *which employee you are* from a value the attacker fully controls.
+More and more critical systems are getting built by people who lean on AI to write code they don't fully understand. That's the pattern behind this whole writeup. The app I'll walk through is a live, in-production platform for a private staff operations platform, and it's held together by exactly the kind of shortcut an AI will happily generate for you if you don't know what to push back on a "check who the user is by reading their email" one-liner that the developer trusted without ever questioning it. Combine that with a couple of default Firebase settings nobody turned off, and the whole thing falls apart.
 
-The target was a company that has a platform for airport security operations services. Two portals (Sky Marshal and Ground Security), a login screen asking for an employee ID and a PIN, and a Firebase backend behind it (Auth + Firestore + Storage). I started with just the URL, no account. By the end I had a session the app treated as the **system administrator**, with read access to every employee record, every operational report, and the admin only collections.
+This is a real engagement, on one of the assets in scope for a client. Two portals, a login screen asking for an employee ID and a PIN, and a Firebase backend behind it (Auth + Firestore + Storage). I started with just the URL, no account. By the end I had a session the app treated as the ***system administrator***, with read access to every employee record, every operational report, and the admin only collections.
+
 
 
 ---
